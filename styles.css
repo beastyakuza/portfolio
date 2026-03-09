@@ -71,17 +71,6 @@ header{
     margin-bottom: 16px; /* Separación con el texto inferior */
 }
 
-/* Línea decorativa debajo del nombre */
-.header-content h1::after{
-    content: ""; /* Necesario para mostrar pseudo-elemento */
-    display: block; /* Permite comportarse como línea en bloque */
-    width: 82px; /* Largo de la línea */
-    height: 4px; /* Grosor de la línea */
-    background-color: #6a859d; /* Color de la línea */
-    margin-top: 14px; /* Distancia respecto al título */
-    border-radius: 10px; /* Bordes redondeados de la línea */
-}
-
 /* Párrafo descriptivo */
 .header-content p{
     font-size: clamp(1rem, 1.25vw, 1.15rem); /* Tamaño responsive del párrafo */
@@ -97,7 +86,7 @@ header{
     }
 
     .header-left{
-        justify-content: flex-start; /* Alinea la foto a la izquierda en móvil */
+        justify-content: center; /* Centra la foto horizontalmente en móvil */
         padding: 24px; /* Reduce padding para pantallas pequeñas */
     }
 
