@@ -1,54 +1,111 @@
+﻿/* Reinicio global para evitar estilos por defecto del navegador */
 *{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+    margin: 0; /* Quita márgenes por defecto */
+    padding: 0; /* Quita relleno por defecto */
+    box-sizing: border-box; /* Incluye borde y padding dentro del ancho/alto */
 }
+
+/* Estilos base del documento */
 body{
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    background-color: #eef3f8; /* Fondo general de la página */
+    font-family: Arial, sans-serif; /* Fuente principal */
+    color: #142132; /* Color base del texto */
 }
+
+/* Header principal: dividido en dos paneles (izquierda y derecha) */
 header{
-    background-color: #333;
-    color: white;
-    padding: 28px;
-    display: flex;
-    align-items: flex-start;
-    gap: 22px;
+    width: min(1200px, 96%); /* Máximo ancho 1200px, con margen lateral en pantallas pequeñas */
+    margin: 20px auto; /* Centra el header horizontalmente con separación vertical */
+    display: grid; /* Usa grid para crear las dos columnas */
+    grid-template-columns: 320px 1fr; /* Columna izquierda fija y derecha flexible */
+    min-height: 270px; /* Altura mínima del bloque */
+    border-radius: 8px; /* Esquinas redondeadas */
+    overflow: hidden; /* Recorta contenido para respetar bordes redondeados */
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14); /* Sombra para dar profundidad */
 }
 
+/* Panel izquierdo azul donde va la foto */
+.header-left{
+    background: linear-gradient(140deg, #7c919f 0%, #4f778f 100%); /* Degradado azul similar a referencia */
+    display: flex; /* Flex para centrar el contenedor de foto */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    padding: 28px; /* Espacio interno del panel */
+}
+
+/* Marco oscuro detrás de la foto */
+.photo_wrap{
+    background-color: rgba(0, 0, 0, 0.2); /* Capa oscura semitransparente */
+    padding: 14px; /* Espacio alrededor de la imagen */
+    border-radius: 12px; /* Redondeo del marco */
+}
+
+/* Estilo de la foto */
 .photo_cv{
-    width: 140px;
-    height: 140px;
-    border-radius: 16px;
-    object-fit: cover;
-    flex-shrink: 0;
-    border: 3px solid #ffffff;
+    width: 190px; /* Ancho fijo */
+    height: 190px; /* Alto fijo */
+    object-fit: cover; /* Recorta para mantener proporción sin deformar */
+    border: 4px solid #ffffff; /* Borde blanco de la foto */
+    display: block; /* Elimina espacio inline no deseado */
 }
 
+/* Panel derecho claro donde va nombre y descripción */
+.header-right{
+    background-color: #d6e4f1; /* Fondo azul claro */
+    display: flex; /* Flex para alinear el contenido de texto */
+    align-items: center; /* Centra verticalmente el bloque de texto */
+    padding: 36px 42px; /* Espacios internos superior/inferior y laterales */
+}
+
+/* Contenedor del texto dentro del panel derecho */
 .header-content{
-    text-align: left;
-    max-width: 900px;
+    max-width: 900px; /* Limita ancho para mejorar lectura */
 }
 
+/* Nombre principal */
 .header-content h1{
-    font-size: 1.9rem;
-    line-height: 1.1;
-    margin-bottom: 10px;
+    font-size: clamp(2rem, 3.4vw, 3.3rem); /* Tamaño responsive entre mínimo y máximo */
+    line-height: 1.05; /* Altura de línea compacta para título */
+    letter-spacing: 0.5px; /* Ligero espaciado entre letras */
+    color: #142132; /* Color oscuro del título */
+    margin-bottom: 16px; /* Separación con el texto inferior */
 }
 
+/* Línea decorativa debajo del nombre */
+.header-content h1::after{
+    content: ""; /* Necesario para mostrar pseudo-elemento */
+    display: block; /* Permite comportarse como línea en bloque */
+    width: 82px; /* Largo de la línea */
+    height: 4px; /* Grosor de la línea */
+    background-color: #6a859d; /* Color de la línea */
+    margin-top: 14px; /* Distancia respecto al título */
+    border-radius: 10px; /* Bordes redondeados de la línea */
+}
+
+/* Párrafo descriptivo */
 .header-content p{
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: clamp(1rem, 1.25vw, 1.15rem); /* Tamaño responsive del párrafo */
+    line-height: 1.55; /* Mejora legibilidad */
+    color: #1d3146; /* Color un poco más suave que el título */
+    max-width: 940px; /* Ancho máximo de lectura */
 }
 
-@media (max-width: 768px){
+/* Ajustes responsive para tablet y móvil */
+@media (max-width: 900px){
     header{
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        grid-template-columns: 1fr; /* Pasa de 2 columnas a 1 sola */
     }
 
-    .header-content{
-        text-align: center;
+    .header-left{
+        justify-content: flex-start; /* Alinea la foto a la izquierda en móvil */
+        padding: 24px; /* Reduce padding para pantallas pequeñas */
+    }
+
+    .header-right{
+        padding: 26px 24px 30px; /* Ajusta espacios internos del panel derecho */
+    }
+
+    .header-content h1{
+        font-size: clamp(1.7rem, 7vw, 2.4rem); /* Reduce el tamaño máximo del título en móvil */
     }
 }
