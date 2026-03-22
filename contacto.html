@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Sergio Fernandez</title>
-    <link rel="stylesheet" href="contacto.css">
+    <link rel="stylesheet" href="./contacto.css">
 </head>
 <body>
     <main class="portfolioContent">
@@ -59,6 +59,18 @@
                     <li class="portfolioNavItem"><a class="portfolioNavLink" href="./cursos.html">CURSOS</a></li>
                 </ul>
             </nav>
+            <article class="contactFormSection">
+            <form class="contactForm" action="#" method="post">
+                <h2 class="sectionTitle">Formulario de contacto</h2>
+                <label class="contactFormLabel" for="contactName">Nombre</label>
+                <input class="contactFormInput" type="text" name="contactName" id="contactName" required>
+                <label class="contactFormLabel" for="contactEmail">Correo</label>
+                <input class="contactFormInput" type="email" name="contactEmail" id="contactEmail" required>
+                <label class="contactFormLabel" for="contactMessage">Mensaje</label>
+                <textarea class="contactFormTextarea" name="contactMessage" id="contactMessage" rows="5" required></textarea>
+                <button class="contactFormButton" type="submit">ENVIAR</button>
+            </form>
+            </article>
         </section>
     </main>
 </body>
