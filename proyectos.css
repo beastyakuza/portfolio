@@ -25,4 +25,10 @@
     font-weight: 600;
     color: var(--color-primary-700);
     overflow-wrap: anywhere;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.projectLink:hover{
+    color: var(--color-primary-500);
+    transform: translateX(4px);
 }
