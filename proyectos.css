@@ -1,0 +1,11 @@
+@import "./styles.css";
+
+.projectsList{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.projectLink{
+    overflow-wrap: anywhere;
+}
