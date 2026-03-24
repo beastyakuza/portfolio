@@ -148,3 +148,203 @@ a{
     padding: 4px 10px;
     margin: 10px 12px;
 }
+.portfolioNav{
+    margin-bottom: 2rem;
+}
+.portfolioNavList{
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.portfolioNavLink{
+    display: inline-block;
+    background-color: var(--color-surface);
+    color: var(--color-primary-700);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.9rem 1.4rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.additionalInfoCard,
+.workExperienceSection,
+.contactFormSection,
+.coursesSection,
+.projectsSection{
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 2.2rem;
+    box-shadow: 0 10px 24px var(--color-shadow);
+}
+.additionalInfoSection > article + article{
+    margin-top: 1.8rem;
+}
+.additionalInfoSection .sectionTitle{
+    color: var(--color-primary-800);
+    margin-bottom: 1.6rem;
+}
+.profileSummary,
+.workExperienceDescription,
+.contactFormLabel,
+.contactFormInput,
+.contactFormTextarea,
+.coursePlatform,
+.courseTitle,
+.projectLink{
+    color: var(--color-text);
+}
+.profileSummary,
+.workExperienceDescription{
+    line-height: 1.7;
+}
+.workExperienceList,
+.coursesList,
+.projectsList{
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+.workExperienceRole,
+.courseTitle{
+    display: block;
+    font-size: 1.7rem;
+    color: var(--color-primary-800);
+    margin-bottom: 0.8rem;
+}
+.contactForm{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.contactFormLabel{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.contactFormInput,
+.contactFormTextarea{
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.1rem 1.2rem;
+    background-color: var(--color-surface-soft);
+    font-family: inherit;
+    font-size: 1.4rem;
+}
+.contactFormTextarea{
+    resize: vertical;
+    min-height: 12rem;
+}
+.contactFormButton{
+    border: none;
+    border-radius: 8px;
+    padding: 1.2rem 1.6rem;
+    background-color: var(--color-primary-700);
+    color: var(--color-text-light);
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px){
+    .portfolioContent{
+        gap: 1.2rem;
+        padding: 1rem;
+    }
+
+    .profileSection{
+        flex: 0 0 28rem;
+        margin: 0;
+    }
+
+    .additionalInfoSection{
+        margin: 0;
+        padding: 0.4rem;
+    }
+
+    .portfolioNavList{
+        gap: 0.8rem;
+    }
+}
+
+@media (max-width: 768px){
+    .portfolioContent{
+        flex-direction: column;
+    }
+
+    .profileSection{
+        flex: none;
+        width: 100%;
+        min-height: auto;
+    }
+
+    .additionalInfoSection{
+        width: 100%;
+    }
+
+    .portfolioNavList{
+        justify-content: center;
+    }
+
+    .additionalInfoCard,
+    .workExperienceSection,
+    .contactFormSection,
+    .coursesSection,
+    .projectsSection{
+        padding: 1.8rem;
+    }
+}
+
+@media (max-width: 480px){
+    body{
+        font-size: 1.4rem;
+    }
+
+    .portfolioContent{
+        padding: 0.8rem;
+    }
+
+    .profileSection{
+        padding: 1rem 1rem 2rem;
+        gap: 2rem;
+    }
+
+    .profileHeader{
+        padding: 1.8rem 1rem 1rem;
+    }
+
+    .profileImageContainer{
+        width: 13rem;
+        height: 13rem;
+    }
+
+    .profileName{
+        font-size: 2rem;
+    }
+
+    .profileRole{
+        font-size: 1.2rem;
+    }
+
+    .portfolioNavLink{
+        width: 100%;
+        text-align: center;
+    }
+
+    .portfolioNavItem{
+        width: 100%;
+    }
+
+    .additionalInfoCard,
+    .workExperienceSection,
+    .contactFormSection,
+    .coursesSection,
+    .projectsSection{
+        padding: 1.6rem;
+    }
+
+    .languageItem{
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+}

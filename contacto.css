@@ -1,1 +1,5 @@
 @import "./styles.css";
+
+.contactFormSection{
+    max-width: 72rem;
+}
